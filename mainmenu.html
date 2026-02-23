@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Main Menu</title>
+
+  <!-- A-Frame Library (For 3D VR experiences)-->
+  <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+
+  <!-- CSS for Syling -->
+  <!--<link rel="stylesheet" href="css/style-mainmenu.css">-->
+</head>
+
+
+<body>
+
+
+  <!-- A-Frame Scene -->
+  <a-scene>
+
+    <!-- Assets -->
+    <a-assets>
+      <img id="space" src="assets/space.png" alt="Rocket Ship">
+      <img id="air" src="assets/air.png" alt="Clouds">
+      <img id="land" src="assets/land.png" alt="Mountains">
+      <img id="water" src="assets/water.png" alt="Water Droplet">
+    </a-assets>
+
+    <!-- Sky -->
+    <a-sky color="white"></a-sky>
+
+    <!-- Ground -->
+    <a-sphere radius="1.5" color="#D7BD8A" scale="1 -1 1"></a-sphere>
+
+    <!--Interactive Elements-->
+    <a-box  id="space-button" 
+            class="interactive" 
+            position="0 2.3 -2" 
+            depth="0.1" 
+            height="1.6" 
+            width="1.4" 
+            color="grey"
+            rotation="-3 0 0"
+            shadow>
+
+        <!--Image-->
+        <a-image   src="#space" 
+                   width="0.5" 
+                   height="0.5" 
+                   position="0 0.3 0.07" 
+                   material="transparent: true">
+        </a-image>
+
+        <a-text value="SPACE" 
+                color="white" 
+                align="center" 
+                width="4.5" 
+                position="0 -0.6 0.07">
+        </a-text>
+
+
+        <!-- Hover effect: slight scale up -->
+        <a-animation   begin="mouseenter"
+                        attribute="scale"
+                        to="1.05 1.05 1"
+                        dur="150">
+        </a-animation>
+    
+        <a-animation   begin="mouseleave"
+                        attribute="scale"
+                        to="1 1 1"
+                        dur="150">
+        </a-animation>
+
+        <!-- Clickable behavior -->
+        <a-entity class="clickable"
+            onclick="window.location='lab1.html'">
+        </a-entity>
+    </a-box>
+
+
+    <!-- Camera -->
+    <a-entity camera look-controls position="0 1.65 0">
+      <a-entity cursor="rayOrigin: mouse" raycaster="objects: .interactive"></a-entity>
+    </a-entity>
+
+  </a-scene>
+
+  <!-- JavaScript for Interactivity -->
+  <!--<script src="js/logic-mainmenu.js"></script>-->
+
+</body>
+
+</html>
