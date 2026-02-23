@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Texas State Immersive Biology</title>
+
+  <!-- A-Frame Library (For 3D VR experiences)-->
+  <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+
+  <!-- CSS for Syling -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+
+<body>
+
+
+  <!-- A-Frame Scene -->
+  <a-scene>
+
+    <!-- Assets -->
+    <a-assets>
+      <img src="assets/texas-state-logo.jpg" id="logo">
+    </a-assets>
+
+    <!-- Sky -->
+    <a-sky color="white"></a-sky>
+
+    <!-- Ground -->
+    <a-sphere radius="1.5" color="#7BC8A4" scale="1 -1 1"></a-sphere>
+
+    <!--Title Elements-->
+    <a-entity id="title" position="0 2.7 -2">
+      <a-image src="assets/texas-state-logo.jpg" width="1" height="1" position="0 0 0"></a-image>
+      <a-text value="Texas State Immersive Biology" color="black" align="center" width="3" position="0 -0.4 0"></a-text>
+      <a-text value="A Virtual Reality Experience" color="black" align="center" width="2" position="0 -0.6 0"></a-text>
+    </a-entity>
+
+    <a-box id="start-button" class="interactive" position="0 1.7 -2" rotation="-5 0 0" depth="0.1" height="0.2" width="1" color="black">
+        <a-text value="Start Experience" color="white" align="center" width="1.8" position="0 0.01 0.1"></a-text>
+    </a-box>
+
+    <!-- Camera -->
+    <a-entity camera look-controls position="0 1.6 0">
+      <a-entity cursor="rayOrigin: mouse" raycaster="objects: .interactive"></a-entity>
+    </a-entity>
+
+  </a-scene>
+
+  <!-- JavaScript for Interactivity -->
+  <script src="js/logic.js"></script>
+
+</body>
+
+</html>
