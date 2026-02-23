@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Space</title>
+
+  <!-- A-Frame Library (For 3D VR experiences)-->
+  <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+
+</head>
+
+
+<body>
+
+
+  <!-- A-Frame Scene -->
+  <a-scene>
+
+    <!-- Assets -->
+    <a-assets>
+      <video id="space-video" src="assets/space.mp4" autoplay loop></video>
+    </a-assets>
+
+    <!-- Player -->
+    <a-videosphere src="#space-video"></a-videosphere>
+
+    <!-- Camera -->
+    <a-entity camera look-controls position="0 1.6 0">
+      <a-entity cursor="rayOrigin: mouse" raycaster="objects: .interactive"></a-entity>
+    </a-entity>
+
+  </a-scene>
+
+  <!-- JavaScript for Interactivity -->
+<script>
+      const video = document.querySelector('#space-video');
+      const scene = document.querySelector('a-scene');
+
+      scene.addEventListener('click', () => {
+        if(video.paused){
+          video.play();
+        }
+      });
+</script>
+
+</body>
+
+</html>

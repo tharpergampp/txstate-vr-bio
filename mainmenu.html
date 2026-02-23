@@ -37,47 +37,54 @@
     <!--Interactive Elements-->
     <a-box  id="space-button" 
             class="interactive" 
-            position="0 2.3 -2" 
-            depth="0.1" 
+            position="-1 2.2 -2.5" 
+            depth="0.2" 
             height="1.6" 
             width="1.4" 
-            color="grey"
-            rotation="-3 0 0"
-            shadow>
+            color="#F2F0EF"
+            rotation="-2 0 0">
 
         <!--Image-->
         <a-image   src="#space" 
-                   width="0.5" 
-                   height="0.5" 
-                   position="0 0.3 0.07" 
-                   material="transparent: true">
+                   width="0.75" 
+                   height="0.75" 
+                   position="0 0.15 0.2" 
+                   material="transparent: true"
+                   shadow="false">
         </a-image>
 
         <a-text value="SPACE" 
-                color="white" 
+                color="black" 
                 align="center" 
                 width="4.5" 
-                position="0 -0.6 0.07">
+                position="0 -0.55 0.2">
         </a-text>
+    </a-box>
 
+    <a-box  id="air-button" 
+            class="interactive" 
+            position="1 2.2 -2.5" 
+            depth="0.2" 
+            height="1.6" 
+            width="1.4" 
+            color="#F2F0EF"
+            rotation="-2 0 0">
 
-        <!-- Hover effect: slight scale up -->
-        <a-animation   begin="mouseenter"
-                        attribute="scale"
-                        to="1.05 1.05 1"
-                        dur="150">
-        </a-animation>
-    
-        <a-animation   begin="mouseleave"
-                        attribute="scale"
-                        to="1 1 1"
-                        dur="150">
-        </a-animation>
+        <!--Image-->
+        <a-image   src="#air" 
+                   width="0.75" 
+                   height="0.75" 
+                   position="0 0.15 0.2" 
+                   material="transparent: true"
+                   shadow="false">
+        </a-image>
 
-        <!-- Clickable behavior -->
-        <a-entity class="clickable"
-            onclick="window.location='lab1.html'">
-        </a-entity>
+        <a-text value="AIR" 
+                color="black" 
+                align="center" 
+                width="4.5" 
+                position="0 -0.55 0.2">
+        </a-text>
     </a-box>
 
 
@@ -89,7 +96,40 @@
   </a-scene>
 
   <!-- JavaScript for Interactivity -->
-  <!--<script src="js/logic-mainmenu.js"></script>-->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const playSpace = document.querySelector('#space-button');
+
+    playSpace.addEventListener('click', () => {
+    window.location.href = 'space.html';
+    });
+
+    playSpace.addEventListener('mouseenter', () => {
+    playSpace.setAttribute('scale', '1.1 1.1 1');
+    });
+
+    playSpace.addEventListener('mouseleave', () => {
+    playSpace.setAttribute('scale', '1 1 1');
+    });
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+    const playAir = document.querySelector('#air-button');
+
+    playAir.addEventListener('click', () => {
+    window.location.href = 'air.html';
+    });
+
+    playAir.addEventListener('mouseenter', () => {
+    playAir.setAttribute('scale', '1.1 1.1 1');
+    });
+
+    playAir.addEventListener('mouseleave', () => {
+    playAir.setAttribute('scale', '1 1 1');
+    });
+    });
+
+  </script>
 
 </body>
 
