@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const startButton = document.querySelector('#start-button');
 
   startButton.addEventListener('click', () => {
-    window.location.href = 'lab1_0.html';
+    window.location.href = 'mainmenu.html';
   });
 
   startButton.addEventListener('mouseenter', () => {
