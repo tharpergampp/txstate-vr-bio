@@ -10,6 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   startButton.addEventListener('mouseleave', () => {
-    startButton.setAttribute('color', 'black');
+    startButton.setAttribute('color', '#501214');
   });
 });
